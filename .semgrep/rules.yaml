@@ -1,0 +1,29 @@
+rules:
+  - id: no-print-statements
+    pattern: print(...)
+    message: "Не используй print() в продакшн-коде. Используй logging."
+    languages: [python]
+    severity: WARNING
+
+  - id: no-bare-except
+    pattern: |
+      try:
+        ...
+      except:
+        ...
+    message: "Не используй голый except. Укажи конкретное исключение."
+    languages: [python]
+    severity: ERROR
+
+  - id: no-global-variables
+    pattern: |
+      $X = $Y
+    message: "Избегай глобальных переменных на уровне модуля (кроме констант)."
+    languages: [python]
+    severity: INFO
+
+  - id: division-by-zero-check
+    pattern: $X / $Y
+    message: "Убедись, что делитель не равен нулю."
+    languages: [python]
+    severity: WARNING

@@ -1,0 +1,11 @@
+cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/sh
+echo "Running Semgrep code analysis..."
+semgrep --config .semgrep/rules.yaml src/ --error
+if [ $? -ne 0 ]; then
+  echo "Semgrep found issues. Commit rejected."
+  exit 1
+fi
+echo "Semgrep check passed."
+EOF
+chmod +x .git/hooks/pre-commit
