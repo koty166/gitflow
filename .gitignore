@@ -5,3 +5,8 @@ __pycache__/
 *.egg-info/
 dist/
 bin/
+.venv/
+lib/
+bin/
+include/
+pyvenv.cfg
