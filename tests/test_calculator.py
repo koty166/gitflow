@@ -14,3 +14,8 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError):
         divide(5, 0)
+
+def test_devide_by_one():
+    assert devide(123, 1) == 1
+    assert devide(0, 1) == 0
+    assert devide(-1, 1) == -1
