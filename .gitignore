@@ -10,3 +10,4 @@ lib/
 bin/
 include/
 pyvenv.cfg
+CACHEDIR.TAG
